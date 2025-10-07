@@ -124,6 +124,11 @@
   }
 }
 
+ /**
+   * Initiate Pure Counter
+   */
+  new PureCounter();
+
   /**
    * Animation on scroll function and init
    */
