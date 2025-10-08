@@ -27,62 +27,62 @@
   wrapper.addEventListener('mouseenter', () => speed = 0);
   wrapper.addEventListener('mouseleave', () => speed = 1);
 
-  document.addEventListener("DOMContentLoaded", function () {
-            const container = document.querySelector('.grid-system-wrapper');
+  // document.addEventListener("DOMContentLoaded", function () {
+  //           const container = document.querySelector('.grid-system-wrapper');
 
-            function createGrid() {
-                container.innerHTML = ""; // Clear any existing boxes
+  //           function createGrid() {
+  //               container.innerHTML = ""; // Clear any existing boxes
 
-                const screenWidth = window.innerWidth;
-                let boxSize;
+  //               const screenWidth = window.innerWidth;
+  //               let boxSize;
 
-                if (screenWidth < 768) {
-                    boxSize = Math.floor(screenWidth / 7); // 8 boxes per row
-                } else {
-                    boxSize = Math.min(Math.floor(screenWidth / Math.ceil(screenWidth / 109)), 109);
-                }
+  //               if (screenWidth < 768) {
+  //                   boxSize = Math.floor(screenWidth / 7); // 8 boxes per row
+  //               } else {
+  //                   boxSize = Math.min(Math.floor(screenWidth / Math.ceil(screenWidth / 109)), 109);
+  //               }
 
-                const numColumns = Math.ceil(window.innerWidth / boxSize);
-                const numRows = Math.ceil(window.innerHeight / boxSize);
-                const totalBoxes = numColumns * numRows;
+  //               const numColumns = Math.ceil(window.innerWidth / boxSize);
+  //               const numRows = Math.ceil(window.innerHeight / boxSize);
+  //               const totalBoxes = numColumns * numRows;
 
-                for (let i = 0; i < totalBoxes; i++) {
-                    const box = document.createElement('div');
-                    box.classList.add('box');
-                    box.style.width = `${boxSize}px`;
-                    box.style.height = `${boxSize}px`;
-                    container.appendChild(box);
-                }
-            }
+  //               for (let i = 0; i < totalBoxes; i++) {
+  //                   const box = document.createElement('div');
+  //                   box.classList.add('box');
+  //                   box.style.width = `${boxSize}px`;
+  //                   box.style.height = `${boxSize}px`;
+  //                   container.appendChild(box);
+  //               }
+  //           }
 
-            function getRandomBoxes() {
-                const boxes = document.querySelectorAll('.box');
-                const randomIndexes = [];
+  //           function getRandomBoxes() {
+  //               const boxes = document.querySelectorAll('.box');
+  //               const randomIndexes = [];
 
-                while (randomIndexes.length < 6) {
-                    const randomIndex = Math.floor(Math.random() * boxes.length);
-                    if (!randomIndexes.includes(randomIndex)) {
-                        randomIndexes.push(randomIndex);
-                    }
-                }
+  //               while (randomIndexes.length < 6) {
+  //                   const randomIndex = Math.floor(Math.random() * boxes.length);
+  //                   if (!randomIndexes.includes(randomIndex)) {
+  //                       randomIndexes.push(randomIndex);
+  //                   }
+  //               }
 
-                return randomIndexes.map(index => boxes[index]);
-            }
+  //               return randomIndexes.map(index => boxes[index]);
+  //           }
 
-            function blinkBoxes() {
-                const boxes = document.querySelectorAll('.box');
-                boxes.forEach(box => box.classList.remove('blink'));
+  //           function blinkBoxes() {
+  //               const boxes = document.querySelectorAll('.box');
+  //               boxes.forEach(box => box.classList.remove('blink'));
 
-                setTimeout(() => {
-                    const randomBoxes = getRandomBoxes();
-                    randomBoxes.forEach(box => box.classList.add('blink'));
-                }, 100);
-            }
+  //               setTimeout(() => {
+  //                   const randomBoxes = getRandomBoxes();
+  //                   randomBoxes.forEach(box => box.classList.add('blink'));
+  //               }, 100);
+  //           }
 
-            window.addEventListener('resize', createGrid); // Recreate grid on window resize
-            createGrid(); // Initial grid creation
-            setInterval(blinkBoxes, 2000);
-        });
+  //           window.addEventListener('resize', createGrid); // Recreate grid on window resize
+  //           createGrid(); // Initial grid creation
+  //           setInterval(blinkBoxes, 2000);
+  //       });
 
   class TxtType {
   constructor(el, toRotate, period) {
